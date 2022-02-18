@@ -5,13 +5,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'clone the git repo'
-                sh 'pwd'
-                sh 'ls -lrt'
+                sh 'terraform init'
+                sh 'terraform plan'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                echo 'terraform apply'
             }
         }
         stage('Deploy') {
